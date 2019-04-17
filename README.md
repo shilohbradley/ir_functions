@@ -1,5 +1,5 @@
 # R Functions for Institutional Researchers
-R functions and templates for everyday Institutional Research tasks, including reading SQL files into R, de-identifying student ID's, passing large batches of student ID's or UNITIDS (IPEDS) to SQL, and so much more!
+R functions and templates for everyday Institutional Research tasks, including reading SQL files into R, de-identifying student ID's, passing large batches of student ID's or UNITID's (IPEDS) to SQL, and so much more!
 
 ## Examples
 De-identify study ID's
