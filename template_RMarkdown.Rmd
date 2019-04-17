@@ -1,0 +1,44 @@
+---
+title: "TEMPLATE"
+author:
+- Office of Decision Support
+- University of Nevada, Las Vegas
+date: "`r paste0('Last Updated: ', format(Sys.Date(),'%B %d, %Y'))`"
+output:
+  pdf_document: default
+  word_document: default
+header-includes:
+- \usepackage[utf8]{inputenc}
+- \usepackage[T1]{fontenc}
+- \usepackage{textcomp}
+- \usepackage{float}
+---
+
+```{r setup, include = FALSE}
+library(xtable)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+source("C:/lvepmprd_database_connection.R") ## Your database connection file
+source("X:/Groups/Decision Support/Exchange/Shiloh/R/functions_Shiloh.R") ## A file of custom functions
+```
+
+```{r Functions, echo = FALSE, results = 'asis'}
+## Your custom functions here
+```
+
+```{r Parameters, echo = FALSE, results = 'asis'}
+## Your custom parameters here
+maxrows <- 10
+```
+
+```{sql Example Query, connection = db_con, output.var = "trials"}
+-- Example SQL Query
+SELECT distinct strm FROM ps_lv_cnr_terms WHERE rownum < ?maxrows
+```
+
+```{r Example Chunk, echo = FALSE, results = 'asis'}
+## Example R Chunk
+print(trials)
+```
