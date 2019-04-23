@@ -15,10 +15,12 @@ header-includes:
 ---
 
 ```{r setup, include = FALSE}
+## My favorite packages
 library(xtable)
 library(ggplot2)
 library(dplyr)
 library(tidyr)
+library(purrr)
 
 source("C:/lvepmprd_database_connection.R") ## Your database connection file
 source("X:/Groups/Decision Support/Exchange/Shiloh/R/functions_Shiloh.R") ## A file of custom functions
