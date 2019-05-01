@@ -2,8 +2,8 @@
 # An RScript of all the functions that           #  
 # I created and regularly use.                   #
 ##################################################
-# Last updated: April 17, 2019                   #
-# Notes: Created file                            #
+# Last updated: April 30, 2019                   #
+# Notes: Added function to remove empty columns  #
 ##################################################
 
 ## A function for breaking up long xtables into
@@ -104,4 +104,12 @@ slaponzeros <- function(howmanytotaldigits = 9, ids) {
   }
   
   return(newid)
+}
+
+## Remove empty columns in a data frame
+remove_empty_columns <- function(df) {
+  emptycols <- colSums(is.na(df) | is.null(df) | df == "") == nrow(df)
+  df <- df[!emptycols]
+  
+  return(df)
 }
