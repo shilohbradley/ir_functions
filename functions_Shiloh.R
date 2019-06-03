@@ -2,9 +2,29 @@
 # An RScript of all the functions that           #  
 # I created and regularly use.                   #
 ##################################################
-# Last updated: April 30, 2019                   #
+#                                                #
+# Updated: June 3, 2019                          #
+# Notes: Added a check for seeing which          #
+# type of computer is being used and set         #
+# the respective paths.                          #
+#                                                #
+# Updated: May 23, 2019                          #
+# Notes: Source function for NSC format          #
+# into this file.                                #
+#                                                #
+# Updated: April 30, 2019                        #
 # Notes: Added function to remove empty columns  #
+#                                                #
 ##################################################
+
+if (Sys.info()[["sysname"]]=="Windows") {
+  beg_path <- "X:/" 
+} else {
+  beg_path <- "/Volumes/Staff/"
+} 
+
+## A function for formatting data to be prepare to be uploaded to NSC
+source(paste0(beg_path,"Groups/Decision Support/Exchange/Shiloh/R/function_nsc_format.R"))
 
 ## A function for breaking up long xtables into
 ## multiple xtables so that they fit on paper
