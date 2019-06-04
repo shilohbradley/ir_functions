@@ -22,8 +22,14 @@ library(dplyr)
 library(tidyr)
 library(purrr)
 
-source("C:/lvepmprd_database_connection.R") ## Your database connection file
-source("X:/Groups/Decision Support/Exchange/Shiloh/R/functions_Shiloh.R") ## A file of custom functions
+if (Sys.info()[["sysname"]]=="Windows") {
+  beg_path <- "X:/" 
+} else {
+  beg_path <- "/Volumes/Staff/"
+} 
+
+source(paste0(beg_path, "Groups/Decision Support/Exchange/Shiloh/R/utilities_make_db_con.R")) ## Database connection
+source(paste0(beg_path, "Groups/Decision Support/Exchange/Shiloh/R/functions_Shiloh.R")) ## A file of custom functions
 ```
 
 ```{r Functions, echo = FALSE, results = 'asis'}
